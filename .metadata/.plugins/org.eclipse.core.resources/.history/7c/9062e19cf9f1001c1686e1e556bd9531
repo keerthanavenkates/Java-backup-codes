@@ -1,0 +1,17 @@
+package org.collection;
+
+import java.io.File;
+
+public class Newfiles {
+	
+	public static void main(String[] args) {
+		
+		File f = new File("C:\\Users\\HP\\workspace\\IT\\test");
+		
+		// to create a folder
+		f.mkdir();
+		
+		
+	}
+
+}

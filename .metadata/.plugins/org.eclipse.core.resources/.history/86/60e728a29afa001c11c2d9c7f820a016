@@ -1,0 +1,16 @@
+package org.collection;
+
+public class NormalClass extends PartialClass{
+	
+	public static void main(String [] args){
+		NormalClass n = new NormalClass();
+	
+	
+	
+	}
+		
+		
+	}
+	
+	
+

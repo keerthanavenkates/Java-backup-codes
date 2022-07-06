@@ -1,0 +1,38 @@
+package org.collection;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Datas3 {
+	
+	public static void main(String [] args){
+		
+		
+		Set<Integer> C = new TreeSet<Integer>();
+		
+		C.add(10);
+		C.add(20);
+		C.add(30);
+		C.add(40);
+		C.add(30);
+		C.add(50);
+		
+		System.out.println('C');
+		
+       for(int i:C){
+			
+			System.out.println(i);		
+
+		}
+       Set<Integer> D = new TreeSet<Integer>();
+       D.add(60);
+	   D.add(70);
+       
+	   for(int i:D){
+			
+			System.out.println(i);		
+
+	   }
+	}
+
+}

@@ -1,0 +1,55 @@
+package org.selenium;
+
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Taskframe {
+	
+public static void main(String[] args) throws Exception {
+		
+		System.setProperty("webdriver.chrome.driver", ".//driver//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://demo.guru99.com/test/guru99home/");
+		driver.manage().window().maximize();
+		
+		WebElement username  =  driver.findElement(By.id("philadelphia-field-email"));
+		username.sendKeys("keerthanasekar333@gmail.com");
+		
+		//	WebElement username  =  driver.findElement(By.xpath("//iframe[@id='a077aa5e]"));
+		//driver.switchTo().frame(frame);
+		
+		List<WebElement> frames = driver.findElements(By.tagName("iframe"));
+		System.out.println(frames.size());
+		
+		for(int i=1; i< frames.size(); i++){
+			
+			try{
+				
+				driver.switchTo().frame(i);
+				WebElement img  =  driver.findElement(By.xpath("//img[@src='Jmeter720.png']"));
+				
+				img.click();
+	
+			}catch(Exception e){
+				System.out.println("image is not available in this frame: "+i);
+				driver.switchTo().parentFrame();		
+			}
+			
+			
+			 
+			
+			}
+			
+		WebElement img  =  driver.findElement(By.xpath("//script[text='What should I know?']"));
+		
+			
+		}
+			
+		
+q	
+}

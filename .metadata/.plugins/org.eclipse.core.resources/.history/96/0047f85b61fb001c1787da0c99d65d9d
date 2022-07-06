@@ -1,0 +1,47 @@
+package org.selenium;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class RobotClass {
+	
+	public static void main(String [] args) throws AWTException, InterruptedException{
+		
+		System.setProperty("webdriver.chrome.driver", ".//driver//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/login/");
+		driver.manage().window().maximize();	
+
+		Actions a = new Actions(driver);
+		
+		WebElement user = driver.findElement(By.id("email"));
+		a.sendKeys("Keerthanasekar333@gmail.com").build().perform();
+		
+		Thread.sleep(3000);
+		
+		WebElement pass = driver.findElement(By.id("pass"));
+		a.sendKeys("44554455").build().perform();
+		
+		WebElement login = driver.findElement(By.id("loginbutton"));
+		a.click().build().perform();
+		
+		WebElement fb = driver.findElement(By.xpath("//div[contains(text(),'Facebook')]"));
+		a.doubleClick().build().perform();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

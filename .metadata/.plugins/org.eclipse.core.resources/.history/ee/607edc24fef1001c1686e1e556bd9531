@@ -1,0 +1,11 @@
+package org.collection;
+
+public class File {
+	
+	public static void main(String[] args)throws Throwable {
+		
+		File f = new File("C:\\Users\\HP\\workspace\\IT\\test\\A\\B\\article.txt")
+			
+	}
+
+}

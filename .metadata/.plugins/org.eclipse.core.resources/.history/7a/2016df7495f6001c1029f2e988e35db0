@@ -1,0 +1,50 @@
+package org.selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class Browser3 {
+	
+	public static void main(String[] args) throws Exception {
+		
+		//Browser Initialization
+		System.setProperty("webdriver.chrome.driver", ".//driver//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		//to browser launch----------get(URL);
+		driver.get("https://www.facebook.com/");
+		
+		//to maximize window
+		driver.manage().window().maximize();
+		
+		WebElement CreateAccount =  driver.findElement(By.xpath("//a[text()=('Create New Account')]"));
+		CreateAccount.click();
+		Thread.sleep(2000);
+		
+		WebElement Firstname =  driver.findElement(By.xpath("//input[contains(@name,'firstname')]"));
+		Firstname.sendKeys("Keerthana");
+		Thread.sleep(2000);
+		
+		WebElement Surname =  driver.findElement(By.xpath("//input[contains(@name,'lastname')]"));
+		Surname.sendKeys("Venkatesh");
+		Thread.sleep(2000);
+		
+		WebElement emailaddress =  driver.findElement(By.xpath("//input[contains(@name,'reg_email__')]"));
+		emailaddress.sendKeys("keerthanasekar333@gmail.com");
+		Thread.sleep(2000);
+		
+		WebElement day =  driver.findElement(By.id("day"));
+		day.sendKeys("27");
+		Thread.sleep(2000);
+		
+		WebElement month =  driver.findElement(By.id("day"));
+		day.sendKeys("27");
+		Thread.sleep(2000);
+		
+		
+	}
+
+}
