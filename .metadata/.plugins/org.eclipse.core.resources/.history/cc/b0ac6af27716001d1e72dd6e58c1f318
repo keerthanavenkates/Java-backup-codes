@@ -1,0 +1,17 @@
+#Author: your.email@your.domain.com
+
+@tag
+Feature: Searching jobs
+  I want to use this template for my feature file
+
+  @tag1
+  Scenario: Searching jobs
+    Given I want to Launch browser and get url
+    And I want to click login
+    When Give credentials and submit
+    And Search for Software Testing jobs 
+    And Get text write in Excel1
+    Then Search for automation Tester jobs
+    And Get text write in Excel2
+
+  

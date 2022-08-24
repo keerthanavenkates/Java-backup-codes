@@ -1,0 +1,46 @@
+package com.flipkart.resources;
+
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class CommonActions {
+	
+	public static WebDriver driver;
+	
+	public void Launch(){
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.get("https://www.naukri.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	public void insertText(WebElement ele, String value) {
+		ele.sendKeys(value, Keys.ENTER);
+
+	}
+
+	public void windowsHandling() throws Exception{
+		
+		String parentURL = driver.getWindowHandle();
+		Set<String> allURL = driver.getWindowHandles();
+		for (String url : allURL) {
+			if(!url.equals(parentURL));
+			driver.switchTo().window(url);
+			Thread.sleep(1000);
+			System.out.println("window switched");
+		}
+	}
+	
+	public void scrollDown(WebElement ele) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+	    js.executeScript("arguments[0].scrollIntoView(true)", ele);
+	}
+}

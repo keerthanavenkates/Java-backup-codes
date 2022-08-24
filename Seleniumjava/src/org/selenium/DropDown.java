@@ -39,26 +39,11 @@ public class DropDown {
 	
 	for(WebElement all: options){
 		
-		System.out.println(all.getText());
 		
 		if (all.getText().equals("1993")){
 			System.out.println(all.getText());
 		}
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
 }

@@ -1,6 +1,7 @@
 package org.collection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -45,20 +46,24 @@ public class StudentDetails {
 			
 			System.out.println("user defined Map");
 			
-			Map<Integer,StudentData> D =  new LinkedHashMap<>();
+			Map<Integer,StudentData> D =  new HashMap<>();
 			
-			D.put(1,Anitha);
-			D.put(2,Bala );
-			D.put(3,Dinesh);
-			D.put(4,Priya);
+			D.put(Anitha.getRollno(),Anitha);
+			D.put(Bala.getRollno(),Bala );
+			D.put(Dinesh.getRollno(),Dinesh);
+			D.put(Priya.getRollno(),Priya);
 
-
-			Set<Entry<Integer, StudentData>> entrySet   = D.entrySet();
-			for(Entry<Integer, StudentData> object : entrySet){
+			Set<Map.Entry<Integer, StudentData>> entrySet   = D.entrySet();
+			for(Entry<Integer, StudentData> entry : entrySet){
 				
-		    System.out.println((Integer)object.getKey()+"   "+(StudentData)object.getValue());
-			}	
+		    System.out.println(entry.getKey()+"  "+entry.getValue());
+		
+			}
+			
+			System.out.println(D);
 		}
+		
+		
 
 	}
 

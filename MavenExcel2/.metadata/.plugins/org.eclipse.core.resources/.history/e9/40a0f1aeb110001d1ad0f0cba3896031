@@ -1,0 +1,70 @@
+package com.flipkart.stepdefinition;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
+
+import com.flipkart.objectrepository.MobilePurchasepage;
+import com.flipkart.resources.CommonActions;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class FridgePurchaseSteps extends CommonActions {
+	
+	private static final OutputType<File> OutputType = null;
+	CommonActions c = new CommonActions();
+	MobilePurchasepage m = new MobilePurchasepage();
+
+	@Given("LaunchBrowser")
+	public void launchbrowser() {
+		c.Browserlaunch();
+	    
+	}
+
+	@When("User search for Fridge")
+	public void user_search_for_Fridge() {
+		try
+		{
+			m.getCloseIcon().isDisplayed();
+			m.getCloseIcon().click();
+			
+		}catch(Exception e) {
+			
+			System.out.println("Login not required");
+		}	   
+	}
+
+	@When("User choose the fridge and doing payments")
+	public void user_choose_the_fridge_and_doing_payments() {
+		
+		
+		c.insertText(m.getSearchbar(), "Whirlpool");
+		m.getSearchicon().click();	
+	    
+	}
+
+	@Then("user receive order confimation")
+	public void user_receive_order_confimation() throws Exception {
+		 c.windowsHandling();
+		System.out.println(m.getMobilename2().getText());	
+		m.getMobilename2().click();
+	    Thread.sleep(1000);   
+	    
+	}
+
+	@Then("Takes screenshot")
+	public void takes_screenshot() throws IOException {
+		TakesScreenshot tk = (TakesScreenshot)driver;
+		File Source = tk.getScreenshotAs(OutputType.FILE);
+		File destination = new File(".//taget//ScreenShotReport.png");
+		FileUtils.copyFile(Source, destination);	
+	    
+	}
+	
+}

@@ -1,0 +1,7 @@
+package org.ApiTestng;
+
+public class RestAssured {
+	
+	public static void main()
+
+}

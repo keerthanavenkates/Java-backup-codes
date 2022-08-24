@@ -1,0 +1,35 @@
+package TestngAPI;
+
+import io.restassured.RestAssured;
+import 	static io.restassured.RestAssured.*;
+public class Restassured {
+	
+	public static void main(String[] args){
+		
+		RestAssured.baseURI = "https://petstore.swagger.io/v2"; 
+
+		given().log().all().header("Content-Type","application/json").body("{\r\n" + 
+				"  \"id\": 218,\r\n" + 
+				"  \"category\": {\r\n" + 
+				"    \"id\": 10,\r\n" + 
+				"    \"name\": \"cat\"\r\n" + 
+				"  },\r\n" + 
+				"  \"name\": \"Tiny\",\r\n" + 
+				"  \"photoUrls\": [\r\n" + 
+				"    \"string\"\r\n" + 
+				"  ],\r\n" + 
+				"  \"tags\": [\r\n" + 
+				"    {\r\n" + 
+				"      \"id\": 2,\r\n" + 
+				"      \"name\": \"breed\"\r\n" + 
+				"    }\r\n" + 
+				"  ],\r\n" + 
+				"  \"status\": \"available\"\r\n" + 
+				"}")
+		
+		.when().post("/pet")
+		.then().log().all().assertThat().statusCode(200);		
+		
+	}
+
+}

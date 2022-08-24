@@ -4,6 +4,11 @@
 		<item value="335" key="DIALOG_X_ORIGIN"/>
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="EditorSelectionDialog">
+		<item value="true" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
+		<item value=".xls" key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION"/>
+		<item value="Microsoft Excel 97-2003 Worksheet" key="EditorSelectionDialog.STORE_ID_DESCR"/>
+	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="-1" key="dialogHeight"/>
 		<item value="-1" key="dialogWidth"/>
@@ -17,6 +22,10 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
+		<item value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.m2e"/>
+		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
 		<item value="0" key="sort"/>
@@ -30,6 +39,12 @@
 			<item value="0"/>
 			<item value="798"/>
 			<item value="553"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.m2e.core.wizards.Maven2ImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
 </section>

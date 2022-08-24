@@ -1,0 +1,76 @@
+package com.nakuri.stepdefinition;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class JobSearch {
+	
+	static WebDriver driver;
+	@Given("I want to Launch browser and get url")
+	public void i_want_to_Launch_browser_and_get_url() {
+		WebDriverManager.chromedriver().setup(); 
+
+		driver = new ChromeDriver();
+		driver.get("https://www.naukri.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
+			
+		
+	   
+	}
+
+	@Given("I want to click login")
+	public void i_want_to_click_login() {
+		WebElement login =  driver.findElement(By.xpath("//div[contains(text(),'Login')]"));
+		login.click();
+	    
+	}
+
+	@When("Give credentials and submit")
+	public void give_credentials_and_submit() throws InterruptedException {
+		WebElement username =  driver.findElement(By.xpath("//input[@class='err-border']"));
+		
+		username.click();
+		username.sendKeys("keerthanasekar333@gmail.com");
+		WebElement password =  driver.findElement(By.xpath("//input[@type='password']"));
+		password.sendKeys("ramesh27");
+		
+		WebElement enter =  driver.findElement(By.xpath("//button[@type='submit']"));
+		enter.click();
+		Thread.sleep(3000);
+	    
+	}
+
+	@When("Search for Software Testing jobs")
+	public void search_for_Software_Testing_jobs() {
+	    
+	}
+
+	@When("Get text write in Excel{int}")
+	public void get_text_write_in_Excel1() {
+	   
+	}
+
+	@Then("Search for automation Tester jobs")
+	public void search_for_automation_Tester_jobs() {
+	   
+	}
+
+	@Then("Get text write in Excel{int}")
+	public void get_text_write_in_Excel2(String data2) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
+	}
+
+
+	
+}

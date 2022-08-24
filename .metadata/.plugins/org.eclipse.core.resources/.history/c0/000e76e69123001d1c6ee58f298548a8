@@ -1,0 +1,11 @@
+package org.RestAPI;
+
+public class Restassured {
+	
+	
+	public static void main(String [] args){
+		
+		
+	}
+
+}

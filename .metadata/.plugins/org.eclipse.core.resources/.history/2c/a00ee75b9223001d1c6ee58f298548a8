@@ -1,0 +1,10 @@
+package org.TestngAPI;
+
+public class Restassured {
+	
+	public static void main(String [] args){
+		
+		
+	}
+
+}

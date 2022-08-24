@@ -1,0 +1,84 @@
+package com.nakuri.stepdefinition;
+
+
+import com.flipkart.objectrepository.Nakuripage;
+import com.flipkart.resources.CommonActions2;
+
+import cucumber.api.java.en.Given;
+	import cucumber.api.java.en.Then;
+	import cucumber.api.java.en.When;
+
+	public class Nakuri extends Nakuripage{
+		
+		CommonActions2 c2 = new CommonActions2();
+		Nakuripage n = new Nakuripage();
+		
+		
+		@Given("Launch browser")
+		public void launch_browser() {
+			
+			c2.Browserlaunch();
+		}
+
+		
+		
+		
+		@Given("Click Register")
+		public void click_Register(){
+			
+			System.out.println("driver="+driver);
+		n.getRegister().click();
+		c2.windowHandle();
+		
+		}
+
+		@When("Give fullname")
+		public void give_fullname() {
+			
+			
+			n.getFullname();
+
+			c2.insertText(n.getFullname(), "Keerthana Venkatesh");
+		}
+
+		@When("Give email")
+		public void give_email() {
+			n.getMail();
+			c2.insertText(n.getMail(),"keerthanavenkatesh2706@gmail.com");
+			
+		}
+
+		@When("Give password")
+		public void give_password() {
+			n.getPw();
+			c2.insertText(n.getPw(),"Dhanvi18*");	
+		}
+
+		@When("Give Mobile")
+		public void give_Mobile() {
+			n.getMobile();
+			c2.insertText(n.getMobile(),"8248596819");
+		}
+
+		@Then("upload resume")
+		public void upload_resume() throws Exception {
+			c2.scrollDown(n.getUpload());
+			c2.scrollDown();
+			
+			n.getUpload();
+			n.getUpload().click();
+			Runtime.getRuntime().exec("D:\\FileUploadScript.exe");
+		}
+
+		@Then("Register click")
+		public void register_click() {
+			n.getReg();
+			n.getReg().click();
+		}
+
+
+
+	}
+
+
+

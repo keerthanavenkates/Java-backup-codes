@@ -1,0 +1,47 @@
+package org.Nakurijobs;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Jobs {
+	
+
+@Given("user launch browser and get in to url")
+public void user_launch_browser_and_get_in_to_url() {
+   
+}
+@Given("user click login")
+public void user_click_login() {
+   
+}
+
+@When("user give credentials to login and click login")
+public void user_give_credentials_to_login_and_click_login() {
+    
+}
+
+@When("user search field for software tester jobs")
+public void user_search_field_for_software_tester_jobs() {
+    
+}
+
+@When("user write in excel")
+public void user_write_in_excel1() {
+    
+}
+
+@Then("user search field for automation tester jobs")
+public void user_search_field_for_automation_tester_jobs() {
+  
+}
+
+@Then("user write in excel")
+public void user_write_in_excel() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new cucumber.api.PendingException();
+}
+
+
+
+}

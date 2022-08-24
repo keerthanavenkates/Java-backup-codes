@@ -1,0 +1,106 @@
+package org.Nakurijobs;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SoftwareTesting {
+	
+	public static WebDriver driver;
+public static void main (String[] args) throws IOException {
+	
+	
+	WebDriverManager.chromedriver().setup(); 
+	driver = new ChromeDriver();
+	driver.get("https://www.naukri.com/");
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		File file = new File(".//target//");
+		
+		FileOutputStream f = new FileOutputStream(file);
+		HSSFWorkbook work = new HSSFWorkbook();
+		HSSFSheet sheet = work.createSheet("SoftwareTesting jobs");
+		HSSFRow row = sheet.createRow(0);
+		HSSFCell col = row.createCell(0);
+		HSSFCell col2 = row.createCell(1);
+		
+		col.setCellValue("Tester Jobs");
+		col2.setCellValue("Company name");
+		
+		
+		WebElement job1 =  driver.findElement(By.xpath("//a[contains(text(),'Software Test Engineer - IT')]"));
+		WebElement com1 =  driver.findElement(By.xpath("//a[contains(text(),'Rapid Care')]"));
+		WebElement job2 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Tester (Java/Selenium) Banking')]"));
+		WebElement com2 = driver.findElement(By.xpath("//a[contains(text(),'Mancer Consulting Services')]"));
+		WebElement job3 =  driver.findElement(By.xpath("//a[contains(text(),'Pega Test Engineer - Selenium/ Automation Testing')]"));
+		WebElement com3 = driver.findElement(By.xpath("//a[contains(text(),'Techstar Software Development India Pvt. Ltd.')]"));
+		WebElement job4 =  driver.findElement(By.xpath("//a[contains(text(),'Selenium Automation Testing')]"));
+		WebElement com4 =  driver.findElement(By.xpath("//a[contains(text(),'Net Connect Pvt Ltd')]"));
+		WebElement job5 =  driver.findElement(By.xpath("//a[contains(text(),'Selenium Automation Tester')]"));
+		WebElement com5 =  driver.findElement(By.xpath("//a[contains(text(),'Verve Financial Services')]"));
+		WebElement job6 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Testing(Selenium)"));
+		WebElement com6 =  driver.findElement(By.xpath("//a[contains(text(),'Busisol Sourcing India Pvt Ltd')]"));
+		WebElement job7 =  driver.findElement(By.xpath("//a[contains(text(),'C # Selenium Automation Testing')]"));
+		WebElement com7 =  driver.findElement(By.xpath("//a[contains(text(),'Sopra Steria India')]"));
+		WebElement job8 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Test Engineer(Java, Selenium) - Immediate Joiners')]"));
+		WebElement com8 =  driver.findElement(By.xpath("//a[contains(text(),'Wipro')]"));
+		WebElement job9 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Test Engineer - Java/Selenium')]"));
+		WebElement com9 =  driver.findElement(By.xpath("//a[contains(text(),'AVE-Promagne')]"));
+		WebElement job10 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Test Engineer - Java/Selenium')][2]"));
+		WebElement com10 =  driver.findElement(By.xpath("//a[contains(text(),'workXforce Smart technologies')]"));
+		WebElement job11 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Tester - Selenium')]"));
+		WebElement com11 =  driver.findElement(By.xpath("//a[contains(text(),'People Konnect')]"));
+		WebElement job12 =  driver.findElement(By.xpath("//a[contains(text(),'Selenium Test Engineer - Manual/Automation Testing')]"));
+		WebElement com12 =  driver.findElement(By.xpath("//a[contains(text(),'cliqhr.com')]"));
+		WebElement job13=  driver.findElement(By.xpath("//a[contains(text(),'Quality Automation Tester - Java/Selenium')]"));
+		WebElement com13 =  driver.findElement(By.xpath("//a[contains(text(),'Senior Automation Test Engineer (Contingency)')]"));
+		WebElement job14 =  driver.findElement(By.xpath("//a[contains(text(),'Equiniti ICS')][1]"));
+		WebElement com14 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Test Engineer')]"));
+		WebElement job15 =  driver.findElement(By.xpath("//a[contains(text(),'Equiniti ICS')][2]"));
+		WebElement com15 =  driver.findElement(By.xpath("//a[contains(text(),'Senior Automation Test Engineer (Contingency)')]"));
+		WebElement job16 =  driver.findElement(By.xpath("//a[contains(text(),'Equiniti ICS')][3]')]"));
+		WebElement com16 =  driver.findElement(By.xpath("//a[contains(text(),'Automation Test Engineer')]"));
+		WebElement job17 =  driver.findElement(By.xpath("//a[contains(text(),'Equiniti ICS')][4]')]"));
+		WebElement com17 =  driver.findElement(By.xpath("//a[contains(text(),'Prime Infosoft')]"));
+		WebElement job18 =  driver.findElement(By.xpath("//a[contains(text(),'Prime Infosoft')]"));
+		WebElement com18 =  driver.findElement(By.xpath("//a[contains(text(),'Prime Infosoft')]"));
+		List<String> name = new ArrayList();
+		
+		
+		
+		name.add(job1.getText());
+		name.add("Venkatesh");
+		name.add("Dhanvika");
+		name.add("Nivetha");
+		name.add("Deepan");
+		
+			for (int i=0; i<name.size(); i++){
+				
+				HSSFRow r = sheet.createRow(i+1);
+				HSSFCell c = r.createCell(0);
+				c.setCellValue(name.get(i));
+				
+			}	
+		work.write(f);
+		work.close();	
+		
+	}
+
+
+}
+}

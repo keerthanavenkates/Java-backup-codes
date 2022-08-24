@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;org.nakuri.stepdefinition.Nakurijobs&apos; to &apos;NakurijobsSteps&apos;&#x0D;&#x0A;- Original project: &apos;NakuriProject&apos;&#x0D;&#x0A;- Original element: &apos;org.nakuri.stepdefinition.Nakurijobs&apos;&#x0D;&#x0A;- Renamed element: &apos;org.nakuri.stepdefinition.NakurijobsSteps&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Nakurijobs&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java&lt;org.nakuri.stepdefinition{Nakurijobs.java[Nakurijobs" matchStrategy="1" name="NakurijobsSteps" qualified="false" references="true" similarDeclarations="false" stamp="1659890259561" textual="false" version="1.0"/>
+</session>

@@ -13,7 +13,7 @@ public class AutoIT {
 		
 		System.setProperty("webdriver.chrome.driver", ".//driver//chromedriver.exe");
 		WebDriver driver= new ChromeDriver();
-		driver.get("https://www.tutorialspoint.com/selenium/selenium_automation_practice.htm");
+		driver.get("https://www.tutorialspoint.com/selenium/selenium_automation_practice.html");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		

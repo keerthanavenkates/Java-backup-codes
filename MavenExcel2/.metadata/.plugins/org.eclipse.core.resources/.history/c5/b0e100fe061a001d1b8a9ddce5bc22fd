@@ -1,0 +1,36 @@
+package org.nakuri.stepdefinition;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class NakuriJob {
+	
+	@Given("I want to Launch browser and url")
+	public void i_want_to_Launch_browser_and_url() {
+	    
+	}
+
+	@Given("I want to login")
+	public void i_want_to_login() {
+	    
+	}
+
+	@When("I want to search for jobs")
+	public void i_want_to_search_for_jobs() {
+	    
+	}
+
+	@When("I want to pic a job")
+	public void i_want_to_pic_a_job() {
+	    
+	}
+
+	@Then("I want to write in excel")
+	public void i_want_to_write_in_excel() {
+	   
+	}
+
+
+
+}

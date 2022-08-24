@@ -1,0 +1,49 @@
+package com.flipkart.stepdefinition;
+
+
+import com.flipkart.objectrepository.Nakuripage;
+import com.flipkart.resources.CommonActions;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class Nakuri extends Nakuripage  {
+	
+	CommonActions c = new CommonActions();
+	Nakuripage n = new Nakuripage();
+	
+	@Given("User Launch Browser and URL")
+	public void user_Launch_Browser_and_URL() {
+		
+		
+	   
+	}
+	
+	@Given("User Login using credentials")
+	public void user_Login_using_credentials() {
+		n.getLogin().click();
+	   
+	}
+
+	@When("User search for jobs")
+	public void user_search_for_jobs() {
+		
+	    
+	}
+
+	@When("User get text the job description")
+	public void user_get_text_the_job_description() {
+
+	}
+
+	@Then("Write in excel")
+	public void write_in_excel() {
+	   
+	}
+
+
+
+	
+	
+}

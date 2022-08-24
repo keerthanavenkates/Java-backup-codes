@@ -1,0 +1,9 @@
+package org.data;
+
+public class PetDetails {
+	
+	public static void petData(){
+		
+	}
+
+}
