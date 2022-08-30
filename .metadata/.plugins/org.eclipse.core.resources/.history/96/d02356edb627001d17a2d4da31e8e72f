@@ -1,0 +1,29 @@
+package org.oauth;
+
+import static io.restassured.RestAssured.given;
+
+import io.restassured.path.json.JsonPath;
+
+public class CourseDetails {
+	
+	public void Courses(){
+		
+	String coursereport = given().log().all().header("Content_type","application/json").body(Bodycourses.Body())
+			.when().post("https://rahulshettyacademy.com/getCourse.php")
+			.then().assertThat().statusCode(200).extract().response().asString();
+	
+	System.out.println("Report:" +coursereport);
+	
+	JsonPath j = new JsonPath(coursereport);
+	
+	int web =j.get("courses.size()");
+	
+	for(int i = 0;i<web; i++){
+		
+		System.out.println("courses["+i+"].webAutomation");
+		System.out.println("courses["+i+"].api");
+		System.out.println("courses["+i+"].mobile");
+		
+	}
+
+}

@@ -20,12 +20,9 @@ public class Excelmultiple {
 		FileOutputStream f = new FileOutputStream(file);
 		HSSFWorkbook work = new HSSFWorkbook();
 		HSSFSheet sheet = work.createSheet("Company");
-		HSSFRow row = sheet.createRow(0);
-		HSSFCell col = row.createCell(0);
-		HSSFCell col2 = row.createCell(1);
+		sheet.createRow(0);
 		
-		col.setCellValue("Employee Name");
-		col2.setCellValue("Employee id");
+		sheet.getRow(0).createCell(0).setCellValue("Employee Name");
 		
 		List<String> name = new ArrayList<String>();
 		name.add("Keerthana");
@@ -35,13 +32,14 @@ public class Excelmultiple {
 		name.add("Deepan");
 		name.add("Ahash");
 		
-			for (int i=0; i<name.size(); i++){
+			for (int i=0; i<name.size(); i++){	
+				sheet.createRow(i+1);
+				sheet.getRow(i+1).createCell(0).setCellValue(name.get(i));
 				
-				HSSFRow r = sheet.createRow(i+1);
-				HSSFCell c = r.createCell(0);
-				c.setCellValue(name.get(i));
-			
-				List<String> id = new ArrayList<String>();
+			}
+			sheet.createRow(1);	
+			sheet.getRow(0).createCell(1).setCellValue("Employeeid");
+			List<String> id = new ArrayList<String>();
 				id.add("121");
 				id.add("131");
 				id.add("141");
@@ -49,23 +47,17 @@ public class Excelmultiple {
 				id.add("161");
 				id.add("171");	
 				
-				for (int j=0; j<id.size(); j++){
+				for (int i1=0; i1<id.size(); i1++){	
+						sheet.createRow(i1+1);
+						sheet.getRow(i1+1).createCell(1).setCellValue(id.get(i1));
+					}	
 					
-					HSSFRow r1= sheet.createRow(j+1);
-					HSSFCell c1 = r1.createCell(1);
-					c1.setCellValue(id.get(j));	
-				
-			}
-			}
-				
+			
 				work.write(f);
 				work.close();	
-				
-			}
-		
-		
-}
-
-
-
-
+			
+					
+				}
+			
+			
+		}

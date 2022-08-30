@@ -1,73 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15299" started-at="2022-08-24T16:31:29Z" finished-at="2022-08-24T16:31:44Z">
+  <suite name="Default suite" duration-ms="7419" started-at="2022-08-30T10:26:25Z" finished-at="2022-08-30T10:26:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15299" started-at="2022-08-24T16:31:29Z" finished-at="2022-08-24T16:31:44Z">
-      <class name="testngAPI.Restassured">
-        <test-method status="PASS" signature="addPet(int, java.lang.String)[pri:1, instance:testngAPI.Restassured@5b275dab]" name="addPet" duration-ms="6496" started-at="2022-08-24T16:31:29Z" data-provider="pet" finished-at="2022-08-24T16:31:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[228]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[tom]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="7419" started-at="2022-08-30T10:26:25Z" finished-at="2022-08-30T10:26:33Z">
+      <class name="org.oauth.Courses">
+        <test-method status="PASS" signature="accesstoken()[pri:0, instance:org.oauth.Courses@4501b7af]" name="accesstoken" duration-ms="7383" started-at="2022-08-30T10:26:25Z" finished-at="2022-08-30T10:26:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addPet -->
-        <test-method status="PASS" signature="addPet(int, java.lang.String)[pri:1, instance:testngAPI.Restassured@5b275dab]" name="addPet" duration-ms="1677" started-at="2022-08-24T16:31:35Z" data-provider="pet" finished-at="2022-08-24T16:31:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[238]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pinky]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addPet -->
-        <test-method status="PASS" signature="addPet(int, java.lang.String)[pri:1, instance:testngAPI.Restassured@5b275dab]" name="addPet" duration-ms="2157" started-at="2022-08-24T16:31:37Z" data-provider="pet" finished-at="2022-08-24T16:31:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[258]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[tintu]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addPet -->
-        <test-method status="PASS" signature="getPet()[pri:2, instance:testngAPI.Restassured@5b275dab]" name="getPet" duration-ms="1632" started-at="2022-08-24T16:31:39Z" finished-at="2022-08-24T16:31:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getPet -->
-        <test-method status="PASS" signature="updatePet()[pri:3, instance:testngAPI.Restassured@5b275dab]" name="updatePet" duration-ms="1494" started-at="2022-08-24T16:31:41Z" finished-at="2022-08-24T16:31:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updatePet -->
-        <test-method status="PASS" signature="FindPet()[pri:4, instance:testngAPI.Restassured@5b275dab]" name="FindPet" duration-ms="1772" started-at="2022-08-24T16:31:42Z" finished-at="2022-08-24T16:31:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FindPet -->
-      </class> <!-- testngAPI.Restassured -->
+        </test-method> <!-- accesstoken -->
+      </class> <!-- org.oauth.Courses -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

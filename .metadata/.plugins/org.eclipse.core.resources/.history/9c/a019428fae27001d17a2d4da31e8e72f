@@ -1,0 +1,42 @@
+package org.oauth;
+
+import org.testng.annotations.Test;
+
+import io.restassured.path.json.JsonPath;
+
+import static io.restassured.RestAssured.*;
+
+public class Courses {
+	
+	
+	public void accesstoken(){
+	String url = "https://rahulshettyacademy.com/getCourse.php?code=4%2F0AdQt8qgd7FEAjkraKOsSNhRofMOkwiC2rRWsz7qYMY91IxJSLNyolP4KqYtNm12CNwoY8A&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
+	String[] s  = url.split("code=");
+	String[]s1 = s[1].split("&scope=");
+
+		String tokenresponse =given().log().all().
+		queryParam("code",s1[0])
+		.queryParam("client_id", "692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com")
+		.queryParam("client_secret","erZOWM9g3UtwNRj340YYaK_W")
+		.queryParam("redirect_uri", "https://rahulshettyacademy.com/getCourse.php")
+		.queryParam("grant_type","authorization_code").urlEncodingEnabled(false)
+		.when().post("https://www.googleapis.com/oauth2/v4/token")
+		.then().assertThat().statusCode(200).extract().response().asString();
+		
+		
+	
+		JsonPath j = new JsonPath(tokenresponse);
+		String token = j.get("access_token");
+		
+	
+	
+	
+		String response = given().log().all().queryParam("access_token", token).header("content_type","application_json")
+		.when().get("https://rahulshettyacademy.com/getCourse.php")
+		.then().assertThat().statusCode(200).extract().response().asString();
+		
+		System.out.println(response);
+	}
+		
+
+}

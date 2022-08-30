@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
-<fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
 <fullyQualifiedTypeName name="java.util.TreeMap"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
@@ -21,7 +19,6 @@
 <fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFSheet"/>
 <fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFRow"/>
 <fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFCell"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
@@ -56,5 +53,11 @@
 <fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFCell"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.data.PetDetails"/>
+<fullyQualifiedTypeName name="org.testng.annotations.DataProvider"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="io.restassured.RestAssured"/>
+<fullyQualifiedTypeName name="io.restassured.path.json.JsonPath"/>
+<fullyQualifiedTypeName name="org.testng.annotations.Test"/>
+<fullyQualifiedTypeName name="io.restassured.filter.session.SessionFilter"/>
 </qualifiedTypeNameHistroy>

@@ -16,7 +16,7 @@ public class Other {
 	public static void main(String[] args){
 	RestAssured.baseURI = "https://petstore.swagger.io/v2"; 
 
-	 String postResponse= given().log().all().header("Content-Type","application/json").body(PetDetails.petData(218, "name","available"))	
+	 String postResponse= given().log().all().header("Content-Type","application/json").body(PetDetails.petData(218, "Tiny","available"))	
 	.when().post("/pet")
 	.then().assertThat().statusCode(200).extract().response().asString();
 	

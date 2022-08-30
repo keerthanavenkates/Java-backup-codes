@@ -42,25 +42,28 @@ public class StudentDetails {
 			 Priya.setStd(9);
 			 Priya.setPhone(8461644983l);
 			 
-			
-			
+					
 			System.out.println("user defined Map");
 			
 			Map<Integer,StudentData> D =  new HashMap<>();
 			
-			D.put(Anitha.getRollno(),Anitha);
-			D.put(Bala.getRollno(),Bala );
-			D.put(Dinesh.getRollno(),Dinesh);
-			D.put(Priya.getRollno(),Priya);
+			D.put(1,Anitha);
+			D.put(2,Bala );
+			D.put(3,Dinesh);
+			D.put(4,Priya);
 
 			Set<Map.Entry<Integer, StudentData>> entrySet   = D.entrySet();
 			for(Entry<Integer, StudentData> entry : entrySet){
-				
-		    System.out.println(entry.getKey()+"  "+entry.getValue());
+				System.out.println(entry.getKey());	
+		    System.out.println(entry.getValue().getEmail());
+		    System.out.println(entry.getValue().getName());
+		    System.out.println(entry.getValue().getPhone());
+		    System.out.println(entry.getValue().getRollno());
+		    System.out.println(entry.getValue().getStd());
 		
 			}
 			
-			System.out.println(D);
+			
 		}
 		
 		

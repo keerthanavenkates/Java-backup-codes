@@ -1,0 +1,37 @@
+package org.oauth;
+
+import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+import io.restassured.path.json.JsonPath;
+
+public class CourseDetails {
+	
+	@Test
+	public void Courses(){
+		
+	String coursereport = given().log().all().header("Content_type","application/json").body(Bodycourses.Body())
+			.when().post("https://rahulshettyacademy.com/getCourse.php")
+			.then().assertThat().statusCode(200).extract().response().asString();
+	
+	System.out.println("Report:" +coursereport);
+	
+	JsonPath j = new JsonPath(coursereport);
+	
+	int course1 =j.get("webAutomation.size()");
+	int course2 =j.get("api.size()");
+	int course3 =j.get("mobile.size()");
+	
+	for(int i = 0;i<course1; i++){
+		
+		System.out.println(j.get("webAutomation["+i+"].courseTitle"));
+		System.out.println(j.get("webAutomation["+i+"].price"));
+		
+		
+	}
+	
+	
+	}
+
+}

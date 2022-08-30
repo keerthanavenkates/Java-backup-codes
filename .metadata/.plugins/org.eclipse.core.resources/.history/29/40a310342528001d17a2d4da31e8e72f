@@ -1,0 +1,59 @@
+package org.oauth;
+
+import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+import io.restassured.path.json.JsonPath;
+
+public class CourseDetails {
+	
+	@Test
+	public void Courses(){
+		
+	String coursereport = given().log().all().header("Content_type","application/json").body(Bodycourses.Body())
+			.when().get("https://rahulshettyacademy.com/getCourse.php")
+			.then().assertThat().statusCode(200).extract().response().asString();
+	
+	System.out.println("Report:" +coursereport);
+	
+	JsonPath j = new JsonPath(coursereport);
+	String courses = j.get("courses.webAutomation");
+	System.out.println(courses);
+	
+	/*for(int i = 0;i<courses; i++){
+		System.out.println(j.get("courses.size["+i+"].webAutomation"));	
+		System.out.println(j.get("courses.size["+i+"].api"));
+		System.out.println(j.get("courses.size["+i+"].mobile"));
+		
+	}
+	
+	
+	int course1 =j.get("webAutomation.size()");
+	int course2 =j.get("api.size()");
+	int course3 =j.get("mobile.size()");
+	
+	for(int m = 0;m<course1; m++){
+		
+		System.out.println(j.get("webAutomation["+m+"].courseTitle"));
+		System.out.println(j.get("webAutomation["+m+"].price"));		
+	}
+for(int k = 0;k<course2; k++){
+		
+		System.out.println(j.get("api["+k+"].courseTitle"));
+		System.out.println(j.get("api["+k+"].price"));
+		
+		
+	}
+
+for(int l = 0;l<course3; l++){
+	
+	System.out.println(j.get("mobile["+l+"].courseTitle"));
+	System.out.println(j.get("apmobilei["+l+"].price"));
+	
+	
+}*/
+	
+	}
+
+}
